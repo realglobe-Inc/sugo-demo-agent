@@ -17,9 +17,11 @@ describe('sugo-demo-agent', function () {
     port = yield freeport()
     server = sgServer({
       endpoints: {
-        '/api/foo': (ctx) => {
-          ctx.set('foo', 'This is foo')
-          ctx.body = null
+        '/api/foo': {
+          HEAD: (ctx) => {
+            ctx.set('foo', 'This is foo')
+            ctx.body = null
+          }
         }
       }
     })

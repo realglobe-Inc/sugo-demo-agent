@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-agent",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Demo of sugo agent",
   "main": "lib",
   "browser": "browser",
@@ -25,7 +25,7 @@
   "homepage": "https://github.com/realglobe-Inc/sugo-demo-agent#readme",
   "dependencies": {
     "co": "^4.6.0",
-    "sugo-agent-base": "^1.1.1"
+    "sugo-agent-base": "^1.2.0"
   },
   "devDependencies": {
     "ape-compiling": "^4.3.2",
