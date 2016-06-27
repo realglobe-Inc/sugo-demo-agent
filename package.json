@@ -1,0 +1,51 @@
+{
+  "name": "sugo-demo-agent",
+  "version": "1.0.0",
+  "description": "Demo of sugo agent",
+  "main": "lib",
+  "browser": "browser",
+  "scripts": {
+    "test": "./ci/test.js",
+    "prepublish": "./ci/build.js && ./ci/browser.js"
+  },
+  "repository": "realglobe-Inc/sugo-demo-agent",
+  "keywords": [
+    "SUGOS",
+    "agent"
+  ],
+  "author": {
+    "name": "Taka Okunishi",
+    "email": "okunishitaka.com@gmail.com",
+    "url": "http://okunishitaka.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/realglobe-Inc/sugo-demo-agent/issues"
+  },
+  "homepage": "https://github.com/realglobe-Inc/sugo-demo-agent#readme",
+  "dependencies": {
+    "co": "^4.6.0"
+  },
+  "devDependencies": {
+    "ape-compiling": "^4.3.2",
+    "ape-covering": "^3.0.3",
+    "ape-formatting": "^1.0.0",
+    "ape-releasing": "^4.0.1",
+    "ape-reporting": "^3.0.1",
+    "ape-tasking": "^4.0.2",
+    "ape-testing": "^4.0.0",
+    "ape-tmpl": "^5.0.6",
+    "ape-updating": "^4.0.1",
+    "coz": "^6.0.3",
+    "filedel": "^2.0.1",
+    "injectmock": "^2.0.0",
+    "sugo-agent-base": "^1.0.2"
+  },
+  "engines": {
+    "node": ">=6",
+    "npm": ">=3"
+  },
+  "publishConfig": {
+    "registry": "https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-local"
+  }
+}
