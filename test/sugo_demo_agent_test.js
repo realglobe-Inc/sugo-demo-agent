@@ -34,9 +34,9 @@ describe('sugo-demo-agent', function () {
   }))
 
   it('Sugo demo agent', () => co(function * () {
-    let agent = new SugoDemoAgent(`http://localhost:${port}`)
+    let agent = new SugoDemoAgent(`http://localhost:${port}/api/foo`)
     assert.ok(agent)
-    let ok = yield agent.knock('/api/foo')
+    let ok = yield agent.knock()
     assert.ok(ok)
   }))
 })
