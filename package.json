@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-agent",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "description": "Demo of sugo agent",
   "main": "lib",
   "browser": "sims/browser",
