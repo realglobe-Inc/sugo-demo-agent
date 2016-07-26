@@ -1,6 +1,6 @@
 {
   "name": "sugo-demo-agent",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Demo of sugo agent",
   "main": "lib",
   "browser": "shim/browser",
