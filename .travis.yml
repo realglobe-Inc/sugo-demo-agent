@@ -2,17 +2,23 @@ language: node_js
 node_js:
 - '6'
 before_install:
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > .npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> .npmrc
-- cat .npmrc
-- npm install istanbul mocha babel-cli -g
+- "echo registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual > .npmrc"
+- "curl -u${NPM_USER}:${NPM_PASSWORD} https://realglobe.artifactoryonline.com/realglobe/api/npm/auth >> .npmrc"
+- "cat .npmrc"
+- "npm install istanbul mocha babel-cli -g"
 install:
 - npm install babel-preset-es2015
 - npm install
 script:
-- ./ci/build.js
-- ./ci/test.js
-- ./ci/cover.js
-- ./ci/report.js
-- ./ci/travis/publish.js
-- ./ci/travis/push_scaffold.js
+- "./ci/build.js"
+- "./ci/test.js"
+- "./ci/cover.js"
+- "./ci/report.js"
+- "./ci/travis/publish.js"
+- "./ci/travis/push_scaffold.js"
+env:
+- secure: rNuP2mhYqiuEoWDD8hepVDYVbxQXOseKbZKQHGxH7iDmGLet3HHz+tLG5Da4u7+DeMdRmU7d9qCy8jpsNlagtem8x7acqA51T71hTOA7wPgX6Uow23/nucgfR/M8TiZaIN+Uv8UCqlvQzr3S0EPrDZeHhZmHJFhXecoExQ11kerb9lpkaixP1bUzDQMZkFzM3Pwy5bp6VlbySiLwEM5EsMitsmKxlgmDlrtfW6Fs2+v93JkQm3f4QSxpqjpIepZE5xsin/RJsx2OiRVhQA18CYuVxSYR0Fu2Ucy0oqefUL2bsl0hqUXuN7hzBam+3qfjcpC4/HOpYCmZzNMgUNCRZ0+jDREvGSt6Sgr4pWXUJbYHJtvoTjNqZIjl1exG+ITiVH0DywessmCCgb775IaylMDRvwbmVI5m30fzjNUNcm7e1XvgqU8Y/neTAFUUU4aUDxKw31zfomV1DJ56BGrdXjhiqjmhbZo5lO0AfYdBFVgBzAka2U3k+H1sJP25on8KD86jz5N8DXdaBp1vSjCyoZZTg94m6xC/nc2RwiTgbLfwsapYQ79yhu7WZeLXia17dtNG4mwPbSr9iN9mDDDNtgC73Li0yoyyS6CAr0s3rUUo31izi9RkJvojqChSaity8cMm1yNVldh0P4gVdixJJDfTDbb3NJW0d4MfpMjhFIA=
+- secure: JDj/lvF/Tssox0V7YEX/CdECNnXGpAYKlaYh3H0oKaAmH4VwhfT/U1eQ6LekzpmKMCKE5eGJmz84L/7eNrLRqZwNHXgUa6EOLrb5ML6fi+Dp9gkaJTtojveh6E4vuQkKRxgTCZPWa/P/yDdPcJqwO1wP+P9M4RaElyoxEEodriWXB0tbqVCD2GkNbmB+3s1pGNJt3wlqoghDroo1NWe3cZ2yzLXi4u6e0Vm3kHkYIDF629LVA7j8H/9FmFzqU/LL70wig1WsPPohfvdvl95CAhIwlcxitKbFXzzaZDxl7/petLKjFaPyLJP6hk8ytoA5M6PQv5M0ptDOzj/rRTztNddC2DNnB3Icq5kcoHfjAM3ewDyOJA8TcYJushiRkPPy6dgZcTk/kEUtfAwHa23JLsk4WG+hHJjVjtme8VUDaAbP3tDdj2yF4ZWFqZi7EVODsff+NmUEhfdCubKHnIZBwtcAxoPzI3UhtG9BXDyWKtvPOJYQ0UKI+NWfjoIFq0frHupaIDHADYykm4Mi/s2i/v2a1kI3I+oksdCxBTEzV7HPxYJ72EZxpHqVywRFtj39PVENppXCpAAlrNksA3G/TU6+vw+A+0/GFkq0BzVal8owPqqQzLt59OMMXPocAVN6WD6Iq9sKbvICEHVLJlpMFs/WNAzuVngzIuEs+2oyNlQ=
+- secure: bgRPwSVCUhFVPz14/kpxCS7mXx5r/JH1Si7nGrOmRUTAZTjs3pMapweN/Pl5lqG6GZ5+s7dlckFG0zmOpIXhMTKLgKSvp2OGhnrrHUpJdYAZM844mTOcbkCynC7sOt+4QHB7lIrQimfzyPIXHTXhlfXWcJtNN+rgq+elp/G6VEv7Qj2/gy2CbxiWxLdwzo4B7nNATPmCDEykxqy4tFlzHYVyJj3WKVSGpbBzlGMpcRkBiTfijhWtH9UJSoUbYNTD9s+V75BowxfWAAD7hxb4eYeIYAMxkVcfhTZ4pgRqgcaN8lD5dm9voLrL8Zpn+nqQe/6KERLKvnI94meAGNNhah4k994I2jWjz72gFIcfEMXG326QV+7VVlTqPbkkrdBjCM5R5YleOgDkpKnPvcVjG4A/MSEELDnc8I4BjauJJpPf0VMHIrKC0kjrllgo7WdnH1PRyRxLpFPSDm/2VExsU2MmyBbeD3usN4z1GTE7GSzEnWmt+QzSRh5jAzuI57ioKerilXJBsuom+D0SS9lVe/aJa/6pSsPFVf0Ep8vyUUuO/iMmRMlTqJE9ofvPn/xne/8gqGC1m4EFyvF8CrWHhy0BSYFbwigDg+jQ7A8USHnd/6ovWv2xKgvUV6ELc+T/Hl8e0YrF/gWnfzRF7H+srsLmCicyTHvgx+yj2fz3tE0=
+- secure: CvlPOryyKmLivneuTFHjTlRhu9sD0D68Z7HY9uJLN0wP6qAkv3W6Vw6+OC8nq/ZYX09wYCmH/opsRnvX47DTEJVUXcZAKaNSR/stGiENwqErVBv56FsGTxCt/M3+DG80h5bSkIll6y0YzmGz6d3toW2PgXPRmpEiNle0yXN/a2qn/xFVJXr938IRZ5b4VJGlqF8cVr0JUMIK2VitVDUVVad++9wIjgBtJc/8oj0NInSzvS+RxZdKI4gBqviyM6JmTURWxfC0BKn4djyYIUZgGDhIZYOJpC9qaz/Gy8uwwO97vApMw6DmOsVBhxuNocUCcGWPty9fQRy2e2/XEZOseYSmDnU2Jh35buyP2RCDZYu3i0erbZDrhXyxuO2GMhlhvb89/vdqu34d9GHYzkF+IacX6y8YMYOG2qHC6qJun67arQ72Bum/DrMfhSa2foSysLtOwtaFKGAHUwq7yYlIicUmA1W23GA2OtaJ6B2Izr1P6E4yS9Bl+t5pYuZ5dBWvvo2ty1nHCSHCMnuaPqJc4UNqaMmhMN6L8ILKlX2Oh+lqdOWVG1Bu7HT/WRSrqQ7EGYQtcMHQqcEaOnFi1jmZDSSL0OwJLvfRPB0TfP/5QgYsN9uJ6WE9WZkAaI7g5ovPxH7tWxwdFLdzxrg21ibd4eoTZVn/RYA2dkYCBS04uAw=
+- secure: pmeC2hB7XvOXxXbpM8JYHNW3St+zRcsUUnd7181hnvFeDdyJNMhBAcS8l9pExfpCfhJpKrnFuBOTSQtmozlCsjvkXif0XQqOCi0wtZ8Cz+ED/Scf54ElHwjKp0vRFoqTW73vdkmm0iU5/r0rVCfWfPbIeG/ySYq3suhatnoc6wBvVGFq3tMHTCNeBeK7VGxUzDRhJWP91F127Otzs4rZzgB1iujjwQSi4qOqCaDrU48bHAV23Rg57Olavsy3poOvIJeGrs+8P8dMocGBAduchYEytUac49EOPYJmrh0xxgnCR5gHkZdZC57b10PIVNiYc/3jf26QSbvoyyKIrekWIFMqZalcwmXVpQ5aaifUsWwPUMAm+M7NcNeaIONX96XCUkGYaskjC4zsOqBNRcjKVmF0xAYRPNa8lsqeuNdD7zk1CeSPKiDS4QTp4vGeN+0iAtfZIdvlyjh01tnZ+NK++4sLw1apRE/pf0OmW6N+P8Ul4Ogpj2bcQHX5Tl4zHWlEGzfXOf5jZoHE+Gdli50+1VOi+PzJT0lM5qJ128fBvEoeo+EbpNsjKrrxCScKkBc8eyBTR1aMajcgLRONhb2WtBDkujBFTFrKn8MMR4TzrBCokpZ/UTXH4i2da/bL9e2rar3c2ugPvjy6rKlek19NH5KCuIqJpLp7Nd1lts+fXUI=
