@@ -2,9 +2,7 @@ language: node_js
 node_js:
 - '6'
 before_install:
-- echo "registry = https://realglobe.artifactoryonline.com/realglobe/api/npm/npm-virtual" > .npmrc
-- curl -u${NPM_USER}:${NPM_PASSWORD} "https://realglobe.artifactoryonline.com/realglobe/api/npm/auth" >> .npmrc
-- cat .npmrc
+- ./ci/travis/create_npmrc.js
 - npm install istanbul mocha babel-cli -g
 install:
 - npm install babel-preset-es2015
@@ -14,3 +12,5 @@ script:
 - ./ci/test.js
 - ./ci/cover.js
 - ./ci/report.js
+- ./ci/travis/publish.js
+- ./ci/travis/push_scaffold.js
