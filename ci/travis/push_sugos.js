@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Commit empty and push to sugo-scaffold
+ * Commit empty and push to sugos
  */
 
 process.chdir(`${__dirname}/../..`)
